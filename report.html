@@ -1,0 +1,166 @@
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CyberSakhi - Report Cyber Crime</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f8f0ff;
+            color: #333;
+        }
+
+        header {
+            background: #7b2cbf;
+            color: white;
+            text-align: center;
+            padding: 25px 15px;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            margin-bottom: 20px;
+            padding: 22px;
+            border-radius: 18px;
+            box-shadow: 0 3px 12px #ccc;
+        }
+
+        .card h2 {
+            color: #7b2cbf;
+        }
+
+        .important {
+            background: #fff0f0;
+            border-left: 5px solid #d00000;
+        }
+
+        ul {
+            line-height: 1.8;
+        }
+
+        button {
+            background: #7b2cbf;
+            color: white;
+            border: none;
+            padding: 13px 22px;
+            border-radius: 25px;
+            font-size: 15px;
+            margin-top: 10px;
+        }
+
+        .back {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>🚨 Report Cyber Crime</h1>
+    <p>Know what to do when something goes wrong</p>
+</header>
+
+
+<div class="container">
+
+    <div class="card important">
+        <h2>⚠️ If You Are a Victim</h2>
+
+        <p>
+            If you have experienced an online financial fraud,
+            act quickly and contact your bank or payment provider
+            through its official support channel.
+        </p>
+    </div>
+
+
+    <div class="card">
+        <h2>📸 Preserve Evidence</h2>
+
+        <p>Keep useful evidence such as:</p>
+
+        <ul>
+            <li>📱 Screenshots</li>
+            <li>💬 Chat or SMS messages</li>
+            <li>📧 Suspicious emails</li>
+            <li>🔗 Suspicious URLs</li>
+            <li>💳 Transaction details</li>
+            <li>📞 Phone numbers used by the scammer</li>
+        </ul>
+    </div>
+
+
+    <div class="card">
+        <h2>🛡️ Before Reporting</h2>
+
+        <ul>
+            <li>Do not delete important evidence.</li>
+            <li>Do not send additional money.</li>
+            <li>Do not share OTP or passwords.</li>
+            <li>Secure your affected accounts.</li>
+            <li>Contact your bank quickly if money was involved.</li>
+        </ul>
+    </div>
+
+
+    <div class="card">
+        <h2>🇮🇳 Official Help</h2>
+
+        <p>
+            For cybercrime reporting in India, use the
+            official Government of India cybercrime reporting
+            service.
+        </p>
+
+        <button onclick="openPortal()">
+            Open Official Portal
+        </button>
+    </div>
+
+
+    <div class="back">
+
+        <button onclick="location.href='dashboard.html'">
+            ← Back to Dashboard
+        </button>
+
+    </div>
+
+</div>
+
+
+<script>
+
+    function openPortal() {
+
+        window.open(
+            "https://www.cybercrime.gov.in/",
+            "_blank"
+        );
+
+    }
+
+</script>
+
+</body>
+</html>

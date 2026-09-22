@@ -1,0 +1,347 @@
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CyberSakhi Dashboard</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f8f0ff;
+            color: #333;
+        }
+
+        /* Navigation Bar */
+
+        nav {
+            background: #240046;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 15px;
+            font-size: 14px;
+        }
+
+        /* Header */
+
+        header {
+            background: #7b2cbf;
+            color: white;
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 32px;
+        }
+
+        header p {
+            margin-top: 10px;
+        }
+
+        /* Main */
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 25px 15px;
+        }
+
+        .welcome {
+            background: white;
+            padding: 25px;
+            border-radius: 18px;
+            text-align: center;
+            box-shadow: 0 4px 12px #ccc;
+            margin-bottom: 25px;
+        }
+
+        .welcome h2 {
+            color: #7b2cbf;
+        }
+
+        /* Cards */
+
+        .cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px 15px;
+            border-radius: 18px;
+            text-align: center;
+            box-shadow: 0 4px 12px #ccc;
+        }
+
+        .icon {
+            font-size: 45px;
+        }
+
+        .card h3 {
+            color: #7b2cbf;
+        }
+
+        .card p {
+            line-height: 1.5;
+        }
+
+        button {
+            background: #7b2cbf;
+            color: white;
+            border: none;
+            padding: 12px 22px;
+            border-radius: 25px;
+            font-size: 14px;
+        }
+
+        button:hover {
+            background: #5a189a;
+        }
+
+        /* About */
+
+        .about {
+            background: white;
+            margin-top: 25px;
+            padding: 25px;
+            border-radius: 18px;
+            box-shadow: 0 4px 12px #ccc;
+            text-align: center;
+        }
+
+        .about h2 {
+            color: #7b2cbf;
+        }
+
+        /* Footer */
+
+        footer {
+            background: #240046;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 25px;
+        }
+
+        /* Mobile */
+
+        @media (max-width: 600px) {
+
+            nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            nav a {
+                margin: 5px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            header h1 {
+                font-size: 27px;
+            }
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+    <!-- Navigation -->
+
+    <nav>
+
+        <div class="logo">
+            🩷 CyberSakhi
+        </div>
+
+        <div>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+        </div>
+
+    </nav>
+
+
+    <!-- Header -->
+
+    <header id="home">
+
+        <h1>Welcome to CyberSakhi 🩷</h1>
+
+        <p>
+            Your Digital Safety Assistant
+        </p>
+
+    </header>
+
+
+    <!-- Main -->
+
+    <div class="container">
+
+        <div class="welcome">
+
+            <h2>Stay Safe Online 🔐</h2>
+
+            <p>
+                Protect yourself from scams, frauds and
+                common cyber threats.
+            </p>
+
+        </div>
+
+
+        <!-- Feature Cards -->
+
+        <div class="cards">
+
+
+            <!-- Scam Detector -->
+
+            <div class="card">
+
+                <div class="icon">🔍</div>
+
+                <h3>Scam Detector</h3>
+
+                <p>
+                    Check suspicious messages and links.
+                </p>
+
+                <button onclick="location.href='index.html'">
+                    Check Now
+                </button>
+
+            </div>
+
+
+            <!-- Safety Tips -->
+
+            <div class="card">
+
+                <div class="icon">🛡️</div>
+
+                <h3>Safety Tips</h3>
+
+                <p>
+                    Learn simple ways to protect yourself online.
+                </p>
+
+                <button onclick="location.href='tips.html'">
+                    View Tips
+                </button>
+
+            </div>
+
+
+            <!-- Report -->
+
+            <div class="card">
+
+                <div class="icon">🚨</div>
+
+                <h3>Report Cyber Crime</h3>
+
+                <p>
+                    Learn what to do if you face cybercrime.
+                </p>
+
+                <button onclick="location.href='scam-detector.html'">
+    Check Now
+</button>
+<button onclick="location.href='scam-types.html'">
+    📚 Scam Types
+</button>
+            </div>
+
+
+            <!-- Emergency -->
+
+            <div class="card">
+
+                <div class="icon">📞</div>
+
+                <h3>Emergency Help</h3>
+
+                <p>
+                    Get guidance during a cyber incident.
+                </p>
+
+                <button onclick="location.href='emergency.html'">
+                    Get Help
+                </button>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- About Section -->
+
+        <div class="about" id="about">
+
+            <h2>About CyberSakhi 🩷</h2>
+
+            <p>
+                CyberSakhi is a digital safety platform designed
+                to help users recognize common online scam warning
+                signs and learn basic cybersecurity practices.
+            </p>
+
+            <p>
+                Our goal is to make cybersecurity awareness
+                simple, accessible and easy to understand.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+            🩷 CyberSakhi
+        </p>
+
+        <p>
+            Stay Alert • Stay Safe • Stay Cyber Smart
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

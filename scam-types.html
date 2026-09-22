@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CyberSakhi - Common Scam Types</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            background: #f4f7fb;
+            color: #1e293b;
+        }
+
+        nav {
+            background: #172554;
+            color: white;
+            padding: 18px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav h2 {
+            margin: 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 35px auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #172554;
+        }
+
+        .intro {
+            text-align: center;
+            color: #64748b;
+            margin-bottom: 30px;
+        }
+
+        .scams {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 16px;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+        }
+
+        .icon {
+            font-size: 38px;
+        }
+
+        .card h2 {
+            color: #172554;
+        }
+
+        .card p {
+            line-height: 1.6;
+            color: #475569;
+        }
+
+        .safe {
+            background: #eff6ff;
+            padding: 12px;
+            border-radius: 10px;
+            color: #1e40af;
+        }
+
+        .back {
+            display: block;
+            width: 220px;
+            margin: 35px auto 10px;
+            padding: 13px;
+            border: none;
+            border-radius: 10px;
+            background: #2563eb;
+            color: white;
+            font-size: 15px;
+        }
+
+        @media (max-width: 650px) {
+            .scams {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<nav>
+    <h2>🛡️ CyberSakhi</h2>
+    <a href="dashboard.html">Dashboard</a>
+</nav>
+
+<div class="container">
+
+    <h1>📚 Common Scam Types</h1>
+
+    <p class="intro">
+        Learn about common online scams and simple ways to stay safe.
+    </p>
+
+    <div class="scams">
+
+        <div class="card">
+            <div class="icon">💳</div>
+            <h2>UPI & Payment Scam</h2>
+            <p>
+                Scammers may pretend to be buyers, sellers, customer-support
+                agents or bank representatives and try to make you send money.
+            </p>
+            <div class="safe">
+                🛡️ Never share your UPI PIN or OTP.
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="icon">💼</div>
+            <h2>Fake Job Scam</h2>
+            <p>
+                Fraudsters may offer attractive jobs and ask for registration,
+                training or processing fees.
+            </p>
+            <div class="safe">
+                🛡️ Be cautious if a job requires upfront payment.
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="icon">🎁</div>
+            <h2>Lottery & Prize Scam</h2>
+            <p>
+                A message may claim that you have won a prize and ask for
+                money or personal information to receive it.
+            </p>
+            <div class="safe">
+                🛡️ Don't pay money to claim an unexpected prize.
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="icon">🔐</div>
+            <h2>Phishing Scam</h2>
+            <p>
+                Fake emails, messages or websites may try to steal passwords,
+                banking details or other sensitive information.
+            </p>
+            <div class="safe">
+                🛡️ Check the website and sender before entering information.
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="icon">📱</div>
+            <h2>Fake KYC Scam</h2>
+            <p>
+                Fraudsters may claim that your bank, wallet or SIM will be
+                blocked unless you complete an urgent KYC process.
+            </p>
+            <div class="safe">
+                🛡️ Use only official apps and websites for KYC.
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="icon">💕</div>
+            <h2>Romance Scam</h2>
+            <p>
+                Someone may build an online relationship and later ask for
+                money, gifts or financial help.
+            </p>
+            <div class="safe">
+                🛡️ Never send money to an online contact you haven't verified.
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="icon">📈</div>
+            <h2>Investment Scam</h2>
+            <p>
+                Fake investment opportunities may promise unusually high or
+                guaranteed returns.
+            </p>
+            <div class="safe">
+                🛡️ Verify investment platforms before investing money.
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="icon">🎣</div>
+            <h2>Social Media Scam</h2>
+            <p>
+                Fake accounts, giveaways and messages can be used to collect
+                personal information or money.
+            </p>
+            <div class="safe">
+                🛡️ Verify accounts and avoid suspicious links.
+            </div>
+        </div>
+
+    </div>
+
+    <button class="back" onclick="location.href='dashboard.html'">
+        ← Back to Dashboard
+    </button>
+
+</div>
+
+</body>
+</html>

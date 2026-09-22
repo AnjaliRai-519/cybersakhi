@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CyberSakhi - Emergency Help</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f8f0ff;
+            color: #333;
+        }
+
+        header {
+            background: #7b2cbf;
+            color: white;
+            text-align: center;
+            padding: 25px 15px;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 22px;
+            margin-bottom: 20px;
+            border-radius: 18px;
+            box-shadow: 0 3px 12px #ccc;
+        }
+
+        .card h2 {
+            color: #7b2cbf;
+        }
+
+        .urgent {
+            border-left: 5px solid red;
+            background: #fff4f4;
+        }
+
+        .number {
+            font-size: 25px;
+            font-weight: bold;
+            color: #d00000;
+        }
+
+        button {
+            background: #7b2cbf;
+            color: white;
+            border: none;
+            padding: 13px 22px;
+            border-radius: 25px;
+            font-size: 15px;
+            margin-top: 10px;
+        }
+
+        .back {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>📞 Emergency Help</h1>
+    <p>Quick guidance during a cyber incident</p>
+</header>
+
+
+<div class="container">
+
+    <div class="card urgent">
+
+        <h2>🚨 Financial Cyber Fraud</h2>
+
+        <p>
+            If money has been transferred because of an online
+            fraud, contact your bank or payment provider
+            immediately through its official channel.
+        </p>
+
+        <p>
+            In India, you can also use the official cybercrime
+            reporting system to report the incident.
+        </p>
+
+    </div>
+
+
+    <div class="card">
+
+        <h2>🇮🇳 Cyber Crime Reporting</h2>
+
+        <p>
+            Use the official Government of India cybercrime
+            reporting portal for reporting cybercrime.
+        </p>
+
+        <button onclick="openPortal()">
+            Open Cyber Crime Portal
+        </button>
+
+    </div>
+
+
+    <div class="card">
+
+        <h2>🛡️ If Your Account Is Hacked</h2>
+
+        <ul>
+            <li>Change your password immediately.</li>
+            <li>Enable two-factor authentication.</li>
+            <li>Sign out unknown devices.</li>
+            <li>Check recent account activity.</li>
+            <li>Contact the platform's official support.</li>
+        </ul>
+
+    </div>
+
+
+    <div class="card">
+
+        <h2>💳 If Money Was Lost</h2>
+
+        <ul>
+            <li>Contact your bank/payment provider immediately.</li>
+            <li>Keep transaction details safely.</li>
+            <li>Take screenshots of relevant messages.</li>
+            <li>Do not communicate further with the scammer.</li>
+            <li>Report the incident through official channels.</li>
+        </ul>
+
+    </div>
+
+
+    <div class="back">
+
+        <button onclick="location.href='dashboard.html'">
+            ← Back to Dashboard
+        </button>
+
+    </div>
+
+</div>
+
+
+<script>
+
+    function openPortal() {
+
+        window.open(
+            "https://www.cybercrime.gov.in/",
+            "_blank"
+        );
+
+    }
+
+</script>
+
+</body>
+
+</html>
