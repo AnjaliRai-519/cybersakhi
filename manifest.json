@@ -1,0 +1,10 @@
+{
+  "name":"Cybersakhi",
+  "short_name":"Cybersakhi",
+  "description":"Your Digital Safety Companion",
+  "start_url":"index.html",
+  "display":"standalone",
+  "background_color":"#ffffff",
+  "theme_color":"#4f46e5",
+  "orientation":"portrait"
+}
