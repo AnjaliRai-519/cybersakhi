@@ -1,10 +1,21 @@
 {
-  "name":"Cybersakhi",
-  "short_name":"Cybersakhi",
-  "description":"Your Digital Safety Companion",
-  "start_url":"index.html",
-  "display":"standalone",
-  "background_color":"#ffffff",
-  "theme_color":"#4f46e5",
-  "orientation":"portrait"
+  "name": "CyberSakhi - Digital Safety",
+  "short_name": "CyberSakhi",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#f4f7fb",
+  "theme_color": "#172554",
+  "description": "CyberSakhi - A digital safety awareness platform",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
 }
