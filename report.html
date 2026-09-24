@@ -1,147 +1,283 @@
  <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberSakhi - Report Scam</title>
 
-    <title>CyberSakhi - Report Cyber Crime</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
         * {
             box-sizing: border-box;
+            font-family: Arial, sans-serif;
         }
 
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f8f0ff;
-            color: #333;
+            background: #f4f7fb;
+            color: #222;
         }
 
-        header {
-            background: #7b2cbf;
+        nav {
+            background: #172554;
             color: white;
-            text-align: center;
-            padding: 25px 15px;
+            padding: 18px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        header h1 {
+        nav h2 {
             margin: 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
         }
 
         .container {
             max-width: 700px;
-            margin: auto;
+            margin: 40px auto;
             padding: 20px;
         }
 
         .card {
             background: white;
-            margin-bottom: 20px;
-            padding: 22px;
+            padding: 30px;
             border-radius: 18px;
-            box-shadow: 0 3px 12px #ccc;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
         }
 
-        .card h2 {
-            color: #7b2cbf;
+        h1 {
+            text-align: center;
+            color: #172554;
         }
 
-        .important {
-            background: #fff0f0;
-            border-left: 5px solid #d00000;
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 25px;
+            line-height: 1.5;
         }
 
-        ul {
-            line-height: 1.8;
+        label {
+            display: block;
+            margin-top: 18px;
+            margin-bottom: 7px;
+            font-weight: bold;
+            color: #172554;
+        }
+
+        select,
+        input,
+        textarea {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #cbd5e1;
+            border-radius: 10px;
+            font-size: 15px;
+            outline: none;
+        }
+
+        textarea {
+            height: 140px;
+            resize: none;
+        }
+
+        select:focus,
+        input:focus,
+        textarea:focus {
+            border-color: #2563eb;
         }
 
         button {
-            background: #7b2cbf;
-            color: white;
+            width: 100%;
+            padding: 14px;
+            margin-top: 22px;
             border: none;
-            padding: 13px 22px;
-            border-radius: 25px;
-            font-size: 15px;
-            margin-top: 10px;
+            border-radius: 10px;
+            background: #dc2626;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #b91c1c;
         }
 
         .back {
-            text-align: center;
+            background: #64748b;
+        }
+
+        .back:hover {
+            background: #475569;
+        }
+
+        #success {
+            display: none;
+            margin-top: 20px;
+            padding: 18px;
+            border-radius: 12px;
+            background: #dcfce7;
+            color: #166534;
+            line-height: 1.6;
+        }
+
+        .note {
+            margin-top: 18px;
+            padding: 12px;
+            background: #eff6ff;
+            color: #1e40af;
+            border-radius: 10px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 600px) {
+
+            .container {
+                margin: 20px auto;
+                padding: 15px;
+            }
+
+            .card {
+                padding: 20px;
+            }
+
+            nav {
+                padding: 15px;
+            }
+
+            nav h2 {
+                font-size: 20px;
+            }
         }
     </style>
 </head>
 
 <body>
 
-<header>
-    <h1>🚨 Report Cyber Crime</h1>
-    <p>Know what to do when something goes wrong</p>
-</header>
+<nav>
+
+    <h2>🛡️ CyberSakhi</h2>
+
+    <a href="dashboard.html">
+        Dashboard
+    </a>
+
+</nav>
 
 
 <div class="container">
 
-    <div class="card important">
-        <h2>⚠️ If You Are a Victim</h2>
-
-        <p>
-            If you have experienced an online financial fraud,
-            act quickly and contact your bank or payment provider
-            through its official support channel.
-        </p>
-    </div>
-
-
     <div class="card">
-        <h2>📸 Preserve Evidence</h2>
 
-        <p>Keep useful evidence such as:</p>
+        <h1>🚨 Report a Scam</h1>
 
-        <ul>
-            <li>📱 Screenshots</li>
-            <li>💬 Chat or SMS messages</li>
-            <li>📧 Suspicious emails</li>
-            <li>🔗 Suspicious URLs</li>
-            <li>💳 Transaction details</li>
-            <li>📞 Phone numbers used by the scammer</li>
-        </ul>
-    </div>
-
-
-    <div class="card">
-        <h2>🛡️ Before Reporting</h2>
-
-        <ul>
-            <li>Do not delete important evidence.</li>
-            <li>Do not send additional money.</li>
-            <li>Do not share OTP or passwords.</li>
-            <li>Secure your affected accounts.</li>
-            <li>Contact your bank quickly if money was involved.</li>
-        </ul>
-    </div>
-
-
-    <div class="card">
-        <h2>🇮🇳 Official Help</h2>
-
-        <p>
-            For cybercrime reporting in India, use the
-            official Government of India cybercrime reporting
-            service.
+        <p class="subtitle">
+            Help others stay safe by reporting suspicious or fraudulent activity.
         </p>
 
-        <button onclick="openPortal()">
-            Open Official Portal
-        </button>
-    </div>
+
+        <form id="reportForm">
+
+            <label for="scamType">
+                Scam Type
+            </label>
+
+            <select id="scamType" required>
+
+                <option value="">
+                    Select scam type
+                </option>
+
+                <option>
+                    Fake Job / Internship
+                </option>
+
+                <option>
+                    OTP / Banking Scam
+                </option>
+
+                <option>
+                    Phishing
+                </option>
+
+                <option>
+                    UPI / Payment Scam
+                </option>
+
+                <option>
+                    Social Media Scam
+                </option>
+
+                <option>
+                    Lottery / Prize Scam
+                </option>
+
+                <option>
+                    Other
+                </option>
+
+            </select>
 
 
-    <div class="back">
+            <label for="details">
+                Scam Details
+            </label>
 
-        <button onclick="location.href='dashboard.html'">
+            <textarea
+                id="details"
+                placeholder="Describe what happened..."
+                required>
+            </textarea>
+
+
+            <label for="contact">
+                Contact / Email (Optional)
+            </label>
+
+            <input
+                type="text"
+                id="contact"
+                placeholder="Enter your email or contact information">
+
+
+            <button type="submit">
+                🚨 Submit Scam Report
+            </button>
+
+        </form>
+
+
+        <div id="success">
+
+            ✅ <b>Report submitted successfully!</b>
+
+            <br><br>
+
+            Thank you for helping make the digital community safer. 🛡️
+
+        </div>
+
+
+        <div class="note">
+
+            💡 <b>Safety Reminder:</b>
+            Never share your OTP, PIN, CVV, password or banking
+            details while reporting a scam.
+
+        </div>
+
+
+        <button
+            class="back"
+            onclick="location.href='dashboard.html'">
+
             ← Back to Dashboard
+
         </button>
 
     </div>
@@ -151,14 +287,43 @@
 
 <script>
 
-    function openPortal() {
+document
+    .getElementById("reportForm")
+    .addEventListener("submit", function(event) {
 
-        window.open(
-            "https://www.cybercrime.gov.in/",
-            "_blank"
-        );
+        event.preventDefault();
 
-    }
+        let scamType =
+            document.getElementById("scamType").value;
+
+        let details =
+            document.getElementById("details").value.trim();
+
+        let success =
+            document.getElementById("success");
+
+
+        if (scamType === "" || details === "") {
+
+            alert("Please fill in the required fields.");
+
+            return;
+        }
+
+
+        success.style.display = "block";
+
+
+        document
+            .getElementById("reportForm")
+            .reset();
+
+
+        success.scrollIntoView({
+            behavior: "smooth"
+        });
+
+    });
 
 </script>
 
