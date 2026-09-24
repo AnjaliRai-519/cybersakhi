@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
 <head>
     <title>CyberSakhi - Scam Detector</title>
@@ -125,7 +125,6 @@
 
         .risk-fill {
             height: 100%;
-            width: 0%;
             border-radius: 20px;
             transition: width 0.8s ease;
         }
@@ -140,6 +139,13 @@
         .warning-title {
             font-weight: bold;
             margin-top: 10px;
+        }
+
+        .explanation {
+            margin-top: 10px;
+            padding: 12px;
+            background: rgba(255,255,255,0.6);
+            border-radius: 8px;
         }
 
         .tip {
@@ -158,6 +164,7 @@
         }
 
         @media (max-width: 600px) {
+
             .container {
                 margin: 20px auto;
                 padding: 15px;
@@ -182,8 +189,12 @@
 
 <nav>
     <h2>🛡️ CyberSakhi</h2>
-    <a href="dashboard.html">Dashboard</a>
+
+    <a href="dashboard.html">
+        Dashboard
+    </a>
 </nav>
+
 
 <div class="container">
 
@@ -195,33 +206,53 @@
             Paste a suspicious message below to check for common scam warning signs.
         </p>
 
-        <textarea id="message"
-        placeholder="Example: Congratulations! You won a lottery. Pay a small fee to claim your prize..."></textarea>
+
+        <textarea
+            id="message"
+            placeholder="Example: Congratulations! You won a lottery. Pay a small fee to claim your prize...">
+        </textarea>
+
 
         <button onclick="checkScam()">
             🔎 Check Message
         </button>
 
+
         <div id="result"></div>
 
-        <button class="back" onclick="location.href='dashboard.html'">
+
+        <button
+            class="back"
+            onclick="location.href='dashboard.html'">
+
             ← Back to Dashboard
+
         </button>
 
     </div>
 
 </div>
 
+
 <script>
 
 function checkScam() {
 
-    let message = document.getElementById("message").value.toLowerCase().trim();
-    let result = document.getElementById("result");
+    let message =
+        document.getElementById("message").value
+        .toLowerCase()
+        .trim();
+
+    let result =
+        document.getElementById("result");
+
+
+    /* Empty message */
 
     if (message === "") {
 
         result.style.display = "block";
+
         result.className = "medium";
 
         result.innerHTML =
@@ -230,9 +261,16 @@ function checkScam() {
         return;
     }
 
+
     let score = 0;
+
     let reasons = [];
-let explanations = [];
+
+    let explanations = [];
+
+
+    /* Warning keywords */
+
     let urgency = [
         "urgent",
         "immediately",
@@ -240,6 +278,7 @@ let explanations = [];
         "within 24 hours",
         "last chance"
     ];
+
 
     let money = [
         "send money",
@@ -253,6 +292,7 @@ let explanations = [];
         "guaranteed return"
     ];
 
+
     let personal = [
         "otp",
         "password",
@@ -264,6 +304,7 @@ let explanations = [];
         "kyc"
     ];
 
+
     let links = [
         "click this link",
         "click here",
@@ -272,6 +313,7 @@ let explanations = [];
         "download"
     ];
 
+
     let job = [
         "registration fee",
         "job fee",
@@ -279,55 +321,113 @@ let explanations = [];
         "work from home"
     ];
 
+
+    /* Urgency */
+
     for (let word of urgency) {
 
         if (message.includes(word)) {
 
             score += 15;
-            reasons.push("⚠️ Urgent or pressure-based language");
+
+            reasons.push(
+                "⚠️ Urgent or pressure-based language"
+            );
+
+            explanations.push(
+                "Scammers often create pressure so users do not have enough time to verify the message."
+            );
+
             break;
         }
     }
+
+
+    /* Money */
 
     for (let word of money) {
 
         if (message.includes(word)) {
 
             score += 20;
-            reasons.push("💰 Money or payment request");
+
+            reasons.push(
+                "💰 Money or payment request"
+            );
+
+            explanations.push(
+                "Unexpected payments, fees or prize claims can be warning signs of a scam."
+            );
+
             break;
         }
     }
+
+
+    /* Personal information */
 
     for (let word of personal) {
 
         if (message.includes(word)) {
 
             score += 25;
-            reasons.push("🔐 Request for sensitive information");
+
+            reasons.push(
+                "🔐 Request for sensitive information"
+            );
+
+            explanations.push(
+                "Never share OTP, PIN, CVV, passwords or banking details with unknown people."
+            );
+
             break;
         }
     }
+
+
+    /* Suspicious links */
 
     for (let word of links) {
 
         if (message.includes(word)) {
 
             score += 15;
-            reasons.push("🔗 Suspicious link or action requested");
+
+            reasons.push(
+                "🔗 Suspicious link or action requested"
+            );
+
+            explanations.push(
+                "Unknown links can lead to phishing websites or malicious downloads."
+            );
+
             break;
         }
     }
+
+
+    /* Job scam */
 
     for (let word of job) {
 
         if (message.includes(word)) {
 
             score += 20;
-            reasons.push("💼 Possible job/internship scam");
+
+            reasons.push(
+                "💼 Possible job/internship scam"
+            );
+
+            explanations.push(
+                "Be cautious if someone asks you to pay money to get a job or internship."
+            );
+
             break;
         }
     }
+
+
+    /* Website link */
 
     if (
         message.includes("http://") ||
@@ -336,66 +436,161 @@ let explanations = [];
     ) {
 
         score += 10;
-        reasons.push("🌐 Contains a web link");
+
+        reasons.push(
+            "🌐 Contains a web link"
+        );
+
+        explanations.push(
+            "Verify the website address carefully before entering any personal or financial information."
+        );
     }
+
+
+    /* Maximum score */
 
     if (score > 100) {
         score = 100;
     }
 
+
+    /* Risk level */
+
     let level;
+
     let className;
+
 
     if (score >= 60) {
 
         level = "🔴 HIGH RISK";
+
         className = "high";
 
-    } else if (score >= 30) {
+    }
+
+    else if (score >= 30) {
 
         level = "🟠 MEDIUM RISK";
+
         className = "medium";
 
-    } else {
+    }
+
+    else {
 
         level = "🟢 LOW RISK";
+
         className = "safe";
     }
 
+
+    /* Show result */
+
     result.style.display = "block";
+
     result.className = className;
+
+
+    /* Result content */
+
+    let warningHTML = "";
+
+
+    if (reasons.length > 0) {
+
+        warningHTML =
+            "<div class='warning-title'>" +
+            "⚠️ Warning Signs:" +
+            "</div>" +
+
+            reasons.join("<br>") +
+
+            "<div class='warning-title'>" +
+            "💡 Why is this risky?" +
+            "</div>";
+
+
+        for (let i = 0; i < explanations.length; i++) {
+
+            warningHTML +=
+                "<div class='explanation'>" +
+                explanations[i] +
+                "</div>";
+        }
+
+    }
+
+    else {
+
+        warningHTML =
+            "✅ No major warning patterns were detected.";
+    }
+
+
+    /* Final output */
 
     result.innerHTML =
 
         "<div class='risk-number'>" +
-        "Risk Score: " + score + "/100" +
+
+        "Risk Score: " +
+        score +
+        "/100" +
+
         "</div>" +
 
+
         "<div class='risk-bar'>" +
-        "<div class='risk-fill' style='width:" +
-        score + "%; background:#2563eb;'></div>" +
+
+        "<div class='risk-fill' " +
+
+        "style='width:" +
+        score +
+        "%; background:#2563eb;'>" +
+
         "</div>" +
+
+        "</div>" +
+
 
         "<br>" +
 
-        "<b>" + level + "</b>" +
+
+        "<b>" +
+        level +
+        "</b>" +
+
 
         "<br><br>" +
 
-        (reasons.length > 0
-            ? "<div class='warning-title'>Warning Signs:</div>" +
-              reasons.join("<br>")
-            : "✅ No major warning patterns were detected."
-        ) +
+
+        warningHTML +
+
 
         "<div class='tip'>" +
 
-        (score >= 60
-            ? "⚠️ <b>Safety Tip:</b> Do not share OTP, passwords, PINs or banking details. Avoid making payments until the message is verified."
-            : score >= 30
-                ? "🔎 <b>Safety Tip:</b> Be cautious. Verify the sender and information through an official source before taking action."
-                : "🛡️ <b>Safety Tip:</b> Even if a message appears safe, never share sensitive information without verification."
-        ) +
+        (
+            score >= 60
+
+            ?
+
+            "⚠️ <b>Safety Tip:</b> Do not share OTP, passwords, PINs or banking details. Avoid making payments until the message is verified."
+
+            :
+
+            score >= 30
+
+            ?
+
+            "🔎 <b>Safety Tip:</b> Be cautious. Verify the sender and information through an official source before taking action."
+
+            :
+
+            "🛡️ <b>Safety Tip:</b> Even if a message appears safe, never share sensitive information without verification."
+        )
+
+        +
 
         "</div>";
 }
@@ -403,4 +598,4 @@ let explanations = [];
 </script>
 
 </body>
-</html> 
+</html>
