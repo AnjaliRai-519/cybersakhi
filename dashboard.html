@@ -19,8 +19,6 @@
             color: #333;
         }
 
-        /* Navigation Bar */
-
         nav {
             background: #240046;
             padding: 15px 20px;
@@ -42,8 +40,6 @@
             font-size: 14px;
         }
 
-        /* Header */
-
         header {
             background: #7b2cbf;
             color: white;
@@ -59,8 +55,6 @@
         header p {
             margin-top: 10px;
         }
-
-        /* Main */
 
         .container {
             max-width: 800px;
@@ -80,8 +74,6 @@
         .welcome h2 {
             color: #7b2cbf;
         }
-
-        /* Cards */
 
         .cards {
             display: grid;
@@ -116,13 +108,21 @@
             padding: 12px 22px;
             border-radius: 25px;
             font-size: 14px;
+            cursor: pointer;
+            margin: 5px;
         }
 
         button:hover {
             background: #5a189a;
         }
 
-        /* About */
+        .report-btn {
+            background: #dc2626;
+        }
+
+        .report-btn:hover {
+            background: #b91c1c;
+        }
 
         .about {
             background: white;
@@ -137,8 +137,6 @@
             color: #7b2cbf;
         }
 
-        /* Footer */
-
         footer {
             background: #240046;
             color: white;
@@ -146,8 +144,6 @@
             padding: 20px;
             margin-top: 25px;
         }
-
-        /* Mobile */
 
         @media (max-width: 600px) {
 
@@ -175,8 +171,6 @@
 
 <body>
 
-    <!-- Navigation -->
-
     <nav>
 
         <div class="logo">
@@ -191,11 +185,11 @@
     </nav>
 
 
-    <!-- Header -->
-
     <header id="home">
 
-        <h1>Welcome to CyberSakhi 🩷</h1>
+        <h1>
+            Welcome to CyberSakhi 🩷
+        </h1>
 
         <p>
             Your Digital Safety Assistant
@@ -204,13 +198,13 @@
     </header>
 
 
-    <!-- Main -->
-
     <div class="container">
 
         <div class="welcome">
 
-            <h2>Stay Safe Online 🔐</h2>
+            <h2>
+                Stay Safe Online 🔐
+            </h2>
 
             <p>
                 Protect yourself from scams, frauds and
@@ -219,8 +213,6 @@
 
         </div>
 
-
-        <!-- Feature Cards -->
 
         <div class="cards">
 
@@ -231,14 +223,19 @@
 
                 <div class="icon">🔍</div>
 
-                <h3>Scam Detector</h3>
+                <h3>
+                    Scam Detector
+                </h3>
 
                 <p>
                     Check suspicious messages and links.
                 </p>
 
-                <button onclick="location.href='index.html'">
+                <button
+                    onclick="location.href='index.html'">
+
                     Check Now
+
                 </button>
 
             </div>
@@ -250,42 +247,55 @@
 
                 <div class="icon">🛡️</div>
 
-                <h3>Safety Tips</h3>
+                <h3>
+                    Safety Tips
+                </h3>
 
                 <p>
                     Learn simple ways to protect yourself online.
                 </p>
 
-                <button onclick="location.href='tips.html'">
+                <button
+                    onclick="location.href='tips.html'">
+
                     View Tips
+
                 </button>
 
             </div>
 
 
-            <!-- Report -->
+            <!-- Report Cyber Crime -->
 
-           <!-- Report Cyber Crime -->
+            <div class="card">
 
-<div class="card">
+                <div class="icon">🚨</div>
 
-    <div class="icon">🚨</div>
+                <h3>
+                    Report Cyber Crime
+                </h3>
 
-    <h3>Report Cyber Crime</h3>
+                <p>
+                    Report suspicious online activity
+                    and cyber scams.
+                </p>
 
-    <p>
-        Report suspicious online activity and cyber scams.
-    </p>
+                <button
+                    class="report-btn"
+                    onclick="location.href='report.html'">
 
-    <button onclick="location.href='report.html'">
-        🚨 Report Scam
-    </button>
+                    🚨 Report Scam
 
-    <button onclick="location.href='scam-types.html'">
-        📚 Scam Types
-    </button>
+                </button>
 
-</div>
+                <button
+                    onclick="location.href='scam-types.html'">
+
+                    📚 Scam Types
+
+                </button>
+
+            </div>
 
 
             <!-- Emergency -->
@@ -294,14 +304,19 @@
 
                 <div class="icon">📞</div>
 
-                <h3>Emergency Help</h3>
+                <h3>
+                    Emergency Help
+                </h3>
 
                 <p>
                     Get guidance during a cyber incident.
                 </p>
 
-                <button onclick="location.href='emergency.html'">
+                <button
+                    onclick="location.href='emergency.html'">
+
                     Get Help
+
                 </button>
 
             </div>
@@ -310,11 +325,11 @@
         </div>
 
 
-        <!-- About Section -->
-
         <div class="about" id="about">
 
-            <h2>About CyberSakhi 🩷</h2>
+            <h2>
+                About CyberSakhi 🩷
+            </h2>
 
             <p>
                 CyberSakhi is a digital safety platform designed
@@ -331,8 +346,6 @@
 
     </div>
 
-
-    <!-- Footer -->
 
     <footer>
 
