@@ -332,7 +332,19 @@
         🛡️ CyberSakhi | Digital Safety for Everyone
 
     </footer>
-
+<script>
+if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+        navigator.serviceWorker.register("sw.js")
+            .then(() => {
+                console.log("CyberSakhi Service Worker registered");
+            })
+            .catch(error => {
+                console.log("Service Worker registration failed:", error);
+            });
+    });
+}
+</script>
 </body>
 
 </html>
