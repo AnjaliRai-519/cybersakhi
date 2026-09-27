@@ -1,21 +1,20 @@
  {
-  "name": "CyberSakhi - Digital Safety",
+  "id": "/cybersakhi/",
+  "name": "CyberSakhi",
   "short_name": "CyberSakhi",
-  "start_url": "./index.html",
+  "start_url": "/cybersakhi/",
+  "scope": "/cybersakhi/",
   "display": "standalone",
-  "background_color": "#f5f3ff",
   "theme_color": "#4f46e5",
-  "orientation": "portrait",
-  "description": "CyberSakhi - Your Digital Safety Companion",
-
+  "background_color": "#ffffff",
   "icons": [
     {
-      "src": "icons/icon-192.png",
+      "src": "/cybersakhi/icon-192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "icons/icon-512.png",
+      "src": "/cybersakhi/icon-512.png",
       "sizes": "512x512",
       "type": "image/png"
     }
