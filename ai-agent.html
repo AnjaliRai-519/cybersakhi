@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CyberSakhi - AI Safety Agent</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            background: #f4f7fb;
+            color: #1e293b;
+        }
+
+        nav {
+            background: #172554;
+            color: white;
+            padding: 18px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav h2 {
+            margin: 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 750px;
+            margin: 35px auto;
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 18px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        h1 {
+            text-align: center;
+            color: #172554;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        .agent-box {
+            background: linear-gradient(135deg, #dbeafe, #ede9fe);
+            padding: 18px;
+            border-radius: 14px;
+            margin: 25px 0;
+            line-height: 1.6;
+        }
+
+        textarea {
+            width: 100%;
+            height: 170px;
+            padding: 15px;
+            border: 1px solid #cbd5e1;
+            border-radius: 12px;
+            resize: none;
+            font-size: 15px;
+            outline: none;
+        }
+
+        textarea:focus {
+            border-color: #2563eb;
+        }
+
+        .analyze {
+            width: 100%;
+            padding: 14px;
+            margin-top: 18px;
+            border: none;
+            border-radius: 10px;
+            background: #2563eb;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .analyze:hover {
+            background: #1d4ed8;
+        }
+
+        #result {
+            display: none;
+            margin-top: 25px;
+            padding: 20px;
+            border-radius: 14px;
+            line-height: 1.7;
+        }
+
+        .high {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        .medium {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .low {
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        .result-title {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-weight: bold;
+            margin-top: 18px;
+        }
+
+        .action {
+            background: rgba(255,255,255,0.7);
+            padding: 12px;
+            border-radius: 10px;
+            margin-top: 8px;
+        }
+
+        .back {
+            width: 100%;
+            padding: 12px;
+            margin-top: 18px;
+            border: none;
+            border-radius: 10px;
+            background: #64748b;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                margin: 20px auto;
+                padding: 15px;
+            }
+
+            .card {
+                padding: 20px;
+            }
+
+            nav {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<nav>
+    <h2>🛡️ CyberSakhi</h2>
+
+    <a href="dashboard.html">
+        Dashboard
+    </a>
+</nav>
+
+<div class="container">
+
+    <div class="card">
+
+        <h1>🤖 AI Safety Agent</h1>
+
+        <p class="subtitle">
+            CyberSakhi's intelligent safety assistant analyzes suspicious
+            digital content and recommends safer next steps.
+        </p>
+
+        <div class="agent-box">
+            🤖 <b>How CyberSakhi Agent works:</b><br><br>
+
+            Understand → Analyze → Detect Risk → Explain →
+            Recommend Action
+        </div>
+
+        <textarea
+            id="message"
+            placeholder="Paste a suspicious SMS, WhatsApp message, email, job offer or online message here...">
+        </textarea>
+
+        <button class="analyze" onclick="runAgent()">
+            🤖 Ask CyberSakhi Agent
+        </button>
+
+        <div id="result"></div>
+
+        <button class="back" onclick="location.href='dashboard.html'">
+            ← Back to Dashboard
+        </button>
+
+    </div>
+
+</div>
+
+<script>
+
+function runAgent() {
+
+    const message =
+        document.getElementById("message").value
+        .toLowerCase()
+        .trim();
+
+    const result =
+        document.getElementById("result");
+
+    if (message === "") {
+
+        result.style.display = "block";
+        result.className = "medium";
+
+        result.innerHTML =
+            "⚠️ <b>Please provide a message for CyberSakhi Agent to analyze.</b>";
+
+        return;
+    }
+
+    let score = 0;
+    let signs = [];
+    let actions = [];
+
+    /* Urgency */
+
+    if (
+        message.includes("urgent") ||
+        message.includes("immediately") ||
+        message.includes("act now") ||
+        message.includes("last chance")
+    ) {
+
+        score += 20;
+
+        signs.push(
+            "⚠️ Pressure or urgent language detected"
+        );
+
+    }
+
+    /* Money */
+
+    if (
+        message.includes("pay") ||
+        message.includes("payment") ||
+        message.includes("fee") ||
+        message.includes("send money") ||
+        message.includes("prize") ||
+        message.includes("lottery")
+    ) {
+
+        score += 25;
+
+        signs.push(
+            "💰 Money or payment request detected"
+        );
+
+    }
+
+    /* Sensitive information */
+
+    if (
+        message.includes("otp") ||
+        message.includes("password") ||
+        message.includes("pin") ||
+        message.includes("cvv") ||
+        message.includes("bank account") ||
+        message.includes("kyc")
+    ) {
+
+        score += 30;
+
+        signs.push(
+            "🔐 Request for sensitive information detected"
+        );
+
+    }
+
+    /* Links */
+
+    if (
+        message.includes("http://") ||
+        message.includes("https://") ||
+        message.includes("www.") ||
+        message.includes("click here") ||
+        message.includes("click this link")
+    ) {
+
+        score += 15;
+
+        signs.push(
+            "🔗 Suspicious link or clicking request detected"
+        );
+
+    }
+
+    /* Job scam */
+
+    if (
+        message.includes("registration fee") ||
+        message.includes("job fee") ||
+        message.includes("pay to get job") ||
+        message.includes("work from home")
+    ) {
+
+        score += 20;
+
+        signs.push(
+            "💼 Possible job/internship scam pattern detected"
+        );
+
+    }
+
+    if (score > 100) {
+        score = 100;
+    }
+
+    let level;
+    let className;
+    let explanation;
+
+    if (score >= 60) {
+
+        level = "🔴 HIGH RISK";
+        className = "high";
+
+        explanation =
+            "CyberSakhi detected multiple warning patterns. Treat this message as potentially unsafe and verify it through an official source.";
+
+        actions.push("Do not click suspicious links.");
+        actions.push("Do not share OTP, PIN, CVV or passwords.");
+        actions.push("Do not send money.");
+        actions.push("Verify the sender independently.");
+
+    }
+
+    else if (score >= 30) {
+
+        level = "🟠 MEDIUM RISK";
+        className = "medium";
+
+        explanation =
+            "Some suspicious patterns were detected. Do not take action until the information is independently verified.";
+
+        actions.push("Verify the sender.");
+        actions.push("Check the official website or app.");
+        actions.push("Avoid sharing sensitive information.");
+
+    }
+
+    else {
+
+        level = "🟢 LOW RISK";
+        className = "low";
+
+        explanation =
+            "No major scam patterns were detected by the current safety checks. However, this does not guarantee that the message is genuine.";
+
+        actions.push("Continue to verify important requests.");
+        actions.push("Never share sensitive information unnecessarily.");
+
+    }
+
+    result.style.display = "block";
+    result.className = className;
+
+    let signsHTML = "";
+
+    if (signs.length > 0) {
+
+        signsHTML =
+            "<div class='section-title'>🔎 Detected Warning Signs</div>" +
+            signs.join("<br>");
+
+    } else {
+
+        signsHTML =
+            "<div class='section-title'>🔎 Detected Warning Signs</div>" +
+            "No major warning patterns detected.";
+
+    }
+
+    let actionsHTML =
+        "<div class='section-title'>🛡️ Recommended Actions</div>";
+
+    for (let action of actions) {
+
+        actionsHTML +=
+            "<div class='action'>• " +
+            action +
+            "</div>";
+
+    }
+
+    result.innerHTML =
+
+        "<div class='result-title'>" +
+        level +
+        "</div>" +
+
+        "<b>Risk Score:</b> " +
+        score +
+        "/100" +
+
+        "<div class='section-title'>🧠 Agent Explanation</div>" +
+        "<div class='action'>" +
+        explanation +
+        "</div>" +
+
+        signsHTML +
+
+        actionsHTML;
+
+}
+
+</script>
+
+</body>
+</html>
